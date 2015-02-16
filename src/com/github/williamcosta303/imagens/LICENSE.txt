@@ -1,0 +1,9 @@
+Images from http://pixabay.com
+
+ENG:
+All the images in this folder except 'logo_hospital.png' are licensed under Creative Commons Deed CC0;
+It's allowed to copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
+
+PT-BR:
+Todas as imagens nessa pasta com exceção de 'logo_hospital.png' estão sob a licença Creative Commons Dedicação ao Domínio Público CC0;
+É permitido copiar, modificar, distribuir e executar o trabalho, mesmo para fins comerciais, tudo sem pedir autorização.
