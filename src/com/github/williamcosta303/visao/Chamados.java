@@ -77,6 +77,7 @@ public class Chamados extends javax.swing.JInternalFrame {
         initComponents();
         this.cDadosEquipe.setEnabled(false);
         this.cDadosResponsavel.setEnabled(false);
+        this.painelEditarRegistro.setVisible(false);
     }
 
     /**
@@ -148,6 +149,22 @@ public class Chamados extends javax.swing.JInternalFrame {
         tRegistros = new javax.swing.JTable();
         bRegistrosNovo = new javax.swing.JButton();
         bRegistrosVer = new javax.swing.JButton();
+        painelEditarRegistro = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        cRegistrosEditarCodigo = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        cRegistrosEditarAutor = new javax.swing.JTextField();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        cRegistrosEditarData = new javax.swing.JFormattedTextField();
+        jLabel18 = new javax.swing.JLabel();
+        cRegistrosEditarHorario = new javax.swing.JFormattedTextField();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        cRegistrosEditarRegistro = new javax.swing.JTextArea();
+        jLabel19 = new javax.swing.JLabel();
+        bRegistrosEditarAtualizar = new javax.swing.JButton();
+        bRegistrosEditarCancelar = new javax.swing.JButton();
+        bRegistrosEditar = new javax.swing.JButton();
         chamadosBuscar = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         cBuscarNumero = new javax.swing.JTextField();
@@ -417,7 +434,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                     .addComponent(lExibicao)
                     .addComponent(bVerChamado, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -641,7 +658,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         abas2.addTab("Dados", chamadoDados);
@@ -681,6 +698,149 @@ public class Chamados extends javax.swing.JInternalFrame {
             }
         });
 
+        painelEditarRegistro.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Editar registro"));
+
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel15.setText("Código");
+
+        cRegistrosEditarCodigo.setEditable(false);
+        cRegistrosEditarCodigo.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel16.setText("Autor");
+
+        cRegistrosEditarAutor.setEditable(false);
+        cRegistrosEditarAutor.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel17.setText("Data");
+
+        try {
+            cRegistrosEditarData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel18.setText("Horário");
+
+        try {
+            cRegistrosEditarHorario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        cRegistrosEditarRegistro.setColumns(20);
+        cRegistrosEditarRegistro.setRows(5);
+        jScrollPane7.setViewportView(cRegistrosEditarRegistro);
+
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel19.setText("Registro");
+
+        bRegistrosEditarAtualizar.setText("Atualizar");
+        bRegistrosEditarAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bRegistrosEditarAtualizarActionPerformed(evt);
+            }
+        });
+
+        bRegistrosEditarCancelar.setText("Cancelar");
+        bRegistrosEditarCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bRegistrosEditarCancelarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cRegistrosEditarData, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                    .addComponent(cRegistrosEditarHorario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bRegistrosEditarAtualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bRegistrosEditarCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel17)
+                                    .addComponent(cRegistrosEditarData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel18)
+                                    .addComponent(cRegistrosEditarHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(bRegistrosEditarAtualizar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bRegistrosEditarCancelar)))
+                        .addGap(0, 1, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout painelEditarRegistroLayout = new javax.swing.GroupLayout(painelEditarRegistro);
+        painelEditarRegistro.setLayout(painelEditarRegistroLayout);
+        painelEditarRegistroLayout.setHorizontalGroup(
+            painelEditarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelEditarRegistroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelEditarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelEditarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cRegistrosEditarCodigo)
+                    .addComponent(cRegistrosEditarAutor, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        painelEditarRegistroLayout.setVerticalGroup(
+            painelEditarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelEditarRegistroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelEditarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(cRegistrosEditarCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelEditarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(cRegistrosEditarAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(painelEditarRegistroLayout.createSequentialGroup()
+                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        bRegistrosEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/github/williamcosta303/imagens/editar-16.png"))); // NOI18N
+        bRegistrosEditar.setText("Editar Registro");
+        bRegistrosEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bRegistrosEditarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout chamadoRegistrosLayout = new javax.swing.GroupLayout(chamadoRegistros);
         chamadoRegistros.setLayout(chamadoRegistrosLayout);
         chamadoRegistrosLayout.setHorizontalGroup(
@@ -693,7 +853,10 @@ public class Chamados extends javax.swing.JInternalFrame {
                         .addComponent(bRegistrosNovo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bRegistrosVer, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bRegistrosEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(painelEditarRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         chamadoRegistrosLayout.setVerticalGroup(
@@ -704,8 +867,11 @@ public class Chamados extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(chamadoRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bRegistrosNovo)
-                    .addComponent(bRegistrosVer))
-                .addContainerGap(118, Short.MAX_VALUE))
+                    .addComponent(bRegistrosVer)
+                    .addComponent(bRegistrosEditar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(painelEditarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         abas2.addTab("Registros", chamadoRegistros);
@@ -854,7 +1020,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
         );
@@ -874,7 +1040,7 @@ public class Chamados extends javax.swing.JInternalFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(abas2, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+                .addComponent(abas2)
                 .addContainerGap())
         );
 
@@ -897,13 +1063,14 @@ public class Chamados extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(abas1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(abas1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
@@ -1271,11 +1438,6 @@ public class Chamados extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(this, "É necessário selecionar um registro clicando em uma linha primeiro!", "ERRO", JOptionPane.WARNING_MESSAGE);
         }
-
-        /*try {
-
-        } catch (Exception e) {
-        }*/
     }//GEN-LAST:event_bRegistrosVerActionPerformed
 
     private void bBuscarNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarNumeroActionPerformed
@@ -1351,6 +1513,87 @@ public class Chamados extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_bBuscarRegistroActionPerformed
 
+    private void bRegistrosEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRegistrosEditarActionPerformed
+        int linhaSelecionada = this.tRegistros.getSelectedRow();
+
+        if(linhaSelecionada != -1){
+            if(!this.tRegistros.getValueAt(linhaSelecionada, 3).toString().startsWith(">> ") && !this.tRegistros.getValueAt(linhaSelecionada, 3).toString().endsWith(" <<") ){
+                this.setCamposEditarRegistro(true);
+                this.cRegistrosEditarCodigo.setText(this.tRegistros.getValueAt(linhaSelecionada, 0).toString());
+                this.cRegistrosEditarAutor.setText(this.tRegistros.getValueAt(linhaSelecionada, 1).toString());
+                // Recebe os valores de um campo "Horário" e os transforma em dois campos
+                this.cRegistrosEditarData.setText(this.tRegistros.getValueAt(linhaSelecionada, 2).toString().substring(0, 2) + this.tRegistros.getValueAt(linhaSelecionada, 2).toString().substring(3, 5) + this.tRegistros.getValueAt(linhaSelecionada, 2).toString().substring(6, 10));
+                this.cRegistrosEditarHorario.setText(this.tRegistros.getValueAt(linhaSelecionada, 2).toString().substring(13, 16) + this.tRegistros.getValueAt(linhaSelecionada, 2).toString().substring(16, 18));
+                this.cRegistrosEditarRegistro.setText(this.tRegistros.getValueAt(linhaSelecionada, 3).toString());
+            } else {
+                JOptionPane.showMessageDialog(this, "Não é permitido a edição de registros feitos pelo sistema!", "ERRO", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "É necessário selecionar um registro clicando em uma linha primeiro!", "ERRO", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_bRegistrosEditarActionPerformed
+
+    private void bRegistrosEditarAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRegistrosEditarAtualizarActionPerformed
+        int confirma = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja ATUALIZAR as informações deste registro?", "Confirmar ação", JOptionPane.YES_NO_CANCEL_OPTION);
+        if(confirma == JOptionPane.YES_OPTION){
+            ControleBanco CB = new ControleBanco();
+            try{
+                // Edita os campos no banco de dados
+                CB.editarRegistro(Integer.parseInt(this.cRegistrosEditarCodigo.getText()), this.cRegistrosEditarData.getText(), this.cRegistrosEditarHorario.getText(), this.cRegistrosEditarRegistro.getText());
+                // Reabilita os outros campos
+                this.setCamposEditarRegistro(false);
+                // Atualiza a tabela de registros para atualizar o "novo" registro
+                this.atualizarTabelaRegistros(Integer.parseInt(this.cDadosChamado.getText()));
+                // Mensagem de sucesso para o usuário
+                JOptionPane.showMessageDialog(this, "Registro atualizado com sucesso!", "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
+            }catch(SQLException SE){
+                JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
+            }
+        } else if (confirma == JOptionPane.CANCEL_OPTION){ // Usuário escolha cancelar
+            // Rabilita os outros campos
+            this.setCamposEditarRegistro(false);
+            // Mensagem de cancelamento
+            JOptionPane.showMessageDialog(this, "Cancelando atualização de registro!", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_bRegistrosEditarAtualizarActionPerformed
+
+    private void bRegistrosEditarCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRegistrosEditarCancelarActionPerformed
+        int confirma = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja cancelar a atualização do registro?", "Confirmar ação", JOptionPane.YES_NO_OPTION);
+        if(confirma == JOptionPane.YES_OPTION){
+            this.setCamposEditarRegistro(false);
+        }
+    }//GEN-LAST:event_bRegistrosEditarCancelarActionPerformed
+
+    private void setCamposEditarRegistro(boolean valor){
+        // Libera/bloqueia o painel
+        this.painelEditarRegistro.setVisible(valor);
+        
+        // Se estiver ocultando, limpa os campos
+        // (Possívelmente temporário)
+        if(!valor){
+            this.cRegistrosEditarCodigo.setText("");
+            this.cRegistrosEditarAutor.setText("");
+            this.cRegistrosEditarData.setText("");
+            this.cRegistrosEditarHorario.setText("");
+            this.cRegistrosEditarRegistro.setText("");
+        }
+        
+        // Desabilita/reabilita outros botões/abas
+        this.abas1.setEnabled(!valor);
+        this.abas2.setEnabled(!valor);
+        this.bRegistrosNovo.setEnabled(!valor);
+        this.bRegistrosVer.setEnabled(!valor);
+        this.bRegistrosEditar.setEnabled(!valor);
+        this.bAtualizarEquipe.setEnabled(!valor);
+        this.bAtualizarMeusChamados.setEnabled(!valor);
+        this.bExibirEquipe.setEnabled(!valor);
+        this.bExibirUsuario.setEnabled(!valor);
+        
+        // Desabilita/reablita tabelas
+        this.tMeusChamados.setEnabled(!valor);
+        this.tMinhaEquipe.setEnabled(!valor);
+        this.tRegistros.setEnabled(!valor);
+    }
     public void atualizarCampos(String username, int codigoUsuario, int codigoEquipe){
         this.codigoUsuario = codigoUsuario;
         this.codigoEquipe = codigoEquipe;
@@ -1372,27 +1615,6 @@ public class Chamados extends javax.swing.JInternalFrame {
                 this.atualizarTabelaChamados(tipoAtualizacao, false, this.codigoEquipe, 1);
                 break;
         }
-        /*if(tipoAtualizacao == 1){
-            this.atualizarTabelaChamados(1, false, 0, 0);
-        } else if(tipoAtualizacao == 2){
-            this.atualizarTabelaChamados(2, false, 0, 0);
-        } else {
-            switch (this.lExibicao.getText()) {
-                case "Exibição atual: Meus chamados abertos":
-                    this.atualizarTabelaChamados(0, true, this.codigoUsuario, 0);
-                    break;
-                case "Exibição atual: Meus chamados suspensos":
-                    this.atualizarTabelaChamados(0, true, this.codigoUsuario, 1);
-                    break;
-                case "Exibição atual: Chamados abertos da minha equipe":
-                    this.atualizarTabelaChamados(0, false, this.codigoEquipe, 0);
-                    break;
-                default:
-                    this.atualizarTabelaChamados(0, false, this.codigoEquipe, 1);
-                    break;
-            }
-            
-        }*/
     }
     
     void atualizarTabelaUsuario(){
@@ -1401,8 +1623,7 @@ public class Chamados extends javax.swing.JInternalFrame {
             int chamadosAbertos = CB.receberChamados(this.codigoUsuario, 0);
             int chamadosSuspensos = CB.receberChamados(this.codigoUsuario, 1);
             
-            // Zerar tabelas
-            this.DTMusuario.setNumRows(0);
+            this.DTMusuario.setNumRows(0);// Zerar tabelas
             
             if(chamadosAbertos > 0){
                 DTMusuario.addRow(
@@ -1913,6 +2134,9 @@ public class Chamados extends javax.swing.JInternalFrame {
     private javax.swing.JButton bExibirEquipe;
     private javax.swing.JButton bExibirUsuario;
     private javax.swing.JButton bNovoRegistroCriar;
+    private javax.swing.JButton bRegistrosEditar;
+    private javax.swing.JButton bRegistrosEditarAtualizar;
+    private javax.swing.JButton bRegistrosEditarCancelar;
     private javax.swing.JButton bRegistrosNovo;
     private javax.swing.JButton bRegistrosVer;
     private javax.swing.JButton bVerChamado;
@@ -1933,6 +2157,11 @@ public class Chamados extends javax.swing.JInternalFrame {
     private javax.swing.JFormattedTextField cRegistroData;
     private javax.swing.JFormattedTextField cRegistroHorario;
     private javax.swing.JTextArea cRegistroInform;
+    private javax.swing.JTextField cRegistrosEditarAutor;
+    private javax.swing.JTextField cRegistrosEditarCodigo;
+    private javax.swing.JFormattedTextField cRegistrosEditarData;
+    private javax.swing.JFormattedTextField cRegistrosEditarHorario;
+    private javax.swing.JTextArea cRegistrosEditarRegistro;
     private javax.swing.JPanel chamadoDados;
     private javax.swing.JPanel chamadoRegistros;
     private javax.swing.JPanel chamadosBuscar;
@@ -1943,6 +2172,11 @@ public class Chamados extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1959,14 +2193,17 @@ public class Chamados extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JLabel lEstado;
     private javax.swing.JLabel lExibicao;
+    private javax.swing.JPanel painelEditarRegistro;
     private javax.swing.JTable tChamados;
     private javax.swing.JTable tMeusChamados;
     private javax.swing.JTable tMinhaEquipe;

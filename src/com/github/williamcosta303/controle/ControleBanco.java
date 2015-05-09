@@ -148,6 +148,11 @@ public class ControleBanco {
         return ContatoBanco.receberRegistros(codigoChamado);
     }
     
+    // Editar dados do chamado
+    public static void editarRegistro(int codigoRegistro, String data, String horario, String registro) throws SQLException{
+        ContatoBanco.editarRegistro(codigoRegistro, data, horario, registro);
+    }
+    
     /**
      * ---------------
      * BUSCA

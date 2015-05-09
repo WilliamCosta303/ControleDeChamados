@@ -684,7 +684,6 @@ public class ContatoBanco {
             ArrayList<Registro> listaRegistros = new ArrayList<>();
             
             ResultSet rs = sta.executeQuery("SELECT * FROM registros WHERE codigoChamado=" + codigoChamado + ";");
-            //ResultSet rs = sta.executeQuery("SELECT codigoRegistro AS codigo, registro FROM registros WHERE codigoChamado=" + codigoChamado + ";");
             while(rs.next()){
                 Registro R = new Registro();
                 R.setCodigoRegistro(rs.getInt("codigoRegistro"));
@@ -705,11 +704,21 @@ public class ContatoBanco {
         } catch (SQLException SE) {
             throw new SQLException("Erro criando registro!\nCausa: " + SE.getMessage());
         }
-        /*
-            SELECT codigoRegistro AS codigo, registro
-            FROM registros
-            WHERE codigoChamado =3
-        */
+    }
+    
+    // Editar dados do chamado
+    public static void editarRegistro(int codigoRegistro, String data, String horario, String registro) throws SQLException{
+        Connection conectado = Conexao.conecta();
+        Statement sta = conectado.createStatement();
+        
+        try{
+            sta.execute("UPDATE registros SET data='" + data + "', horario='" + horario + "', registro='" + registro + "' WHERE codigoRegistro=" + codigoRegistro + ";");
+        }catch(SQLException SE){
+            throw new SQLException("Erro editando dados do chamado!\nCausa: " + SE.getMessage());
+        }finally{
+            sta.close();
+            conectado.close();
+        }
     }
     
     // Receber código de um usuário por nome
