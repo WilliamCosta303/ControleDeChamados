@@ -34,7 +34,7 @@ public class AdministrarUsuarios extends javax.swing.JInternalFrame {
                 this.cAlteracaoEquipe.addItem(CB.receberEquipes().get(i).getNome());
             }
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
             this.dispose();
         }
     }

@@ -446,6 +446,7 @@
                   <Image iconType="3" name="/com/github/williamcosta303/imagens/verRegis-8.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ver chamado"/>
+                <Property name="toolTipText" type="java.lang.String" value="Abre o chamado selecionado na tabela abaixo"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bVerChamadoActionPerformed"/>
@@ -767,6 +768,7 @@
                               <Image iconType="3" name="/com/github/williamcosta303/imagens/editar-16.png"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Editar informa&#xe7;&#xf5;es"/>
+                            <Property name="toolTipText" type="java.lang.String" value="Habilita/confirma a altera&#xe7;&#xe3;o dos campos do chamado"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDadosEditarActionPerformed"/>
@@ -778,6 +780,7 @@
                               <Image iconType="3" name="/com/github/williamcosta303/imagens/suspender-16.png"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Suspender chamado"/>
+                            <Property name="toolTipText" type="java.lang.String" value="Suspende o chamado, o mantendo fora da lista de atendimento"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDadosSuspenderActionPerformed"/>
@@ -789,6 +792,7 @@
                               <Image iconType="3" name="/com/github/williamcosta303/imagens/encerrar-16.png"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Encerrar chamado"/>
+                            <Property name="toolTipText" type="java.lang.String" value="Encerra o chamado, quando este j&#xe1; foi resolvido"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDadosEncerrarActionPerformed"/>
@@ -800,7 +804,7 @@
                               <Image iconType="3" name="/com/github/williamcosta303/imagens/novoCh-16.png"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Fazer registro"/>
-                            <Property name="toolTipText" type="java.lang.String" value="Move o chamado para sua equipe e ele fica sobre sua respons&#xe1;bilidade"/>
+                            <Property name="toolTipText" type="java.lang.String" value="Realiza um registro r&#xe1;pido, sem a possibilidade de alterar algumas informa&#xe7;&#xf5;es"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDadosFazerRegistroActionPerformed"/>
@@ -824,6 +828,7 @@
                           <Image iconType="3" name="/com/github/williamcosta303/imagens/alterarResp-16.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Trocar"/>
+                        <Property name="toolTipText" type="java.lang.String" value="Habilita/confirma troca de equipe do chamado"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDadosTrocarEquipeActionPerformed"/>
@@ -835,6 +840,7 @@
                           <Image iconType="3" name="/com/github/williamcosta303/imagens/alterarResp-16.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Trocar"/>
+                        <Property name="toolTipText" type="java.lang.String" value="Habilita/confirma a troca de respons&#xe1;vel do chamado em uma equipe"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDadosTrocarResponsavelActionPerformed"/>

@@ -169,7 +169,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 // Primeiro limpa a String e o campo da senha
                 tmpSenha = "";
                 
-                JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
             }catch(Exception E){
                 JOptionPane.showMessageDialog(this, "Senha incorreta!\nRevise e tente novamente!", "ERRO", JOptionPane.ERROR_MESSAGE);
                 this.cSenha.setText("");

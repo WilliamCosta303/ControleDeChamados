@@ -239,7 +239,7 @@ public class AbrirChamado extends javax.swing.JInternalFrame {
                 
             }
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_bAbrirChamadoActionPerformed
 

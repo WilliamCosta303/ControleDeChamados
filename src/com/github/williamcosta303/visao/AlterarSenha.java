@@ -164,7 +164,7 @@ public class AlterarSenha extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(this, msgErros, "ERRO", JOptionPane.ERROR_MESSAGE);
             }
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }catch(Exception E){
             JOptionPane.showMessageDialog(this, "Senha original incorreta!\nVerifique e tente novamente!", "ERRO!", JOptionPane.ERROR_MESSAGE);
         }

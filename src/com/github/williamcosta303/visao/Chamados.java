@@ -406,6 +406,7 @@ public class Chamados extends javax.swing.JInternalFrame {
 
         bVerChamado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/github/williamcosta303/imagens/verRegis-8.png"))); // NOI18N
         bVerChamado.setText("Ver chamado");
+        bVerChamado.setToolTipText("Abre o chamado selecionado na tabela abaixo");
         bVerChamado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bVerChamadoActionPerformed(evt);
@@ -491,6 +492,7 @@ public class Chamados extends javax.swing.JInternalFrame {
 
         bDadosEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/github/williamcosta303/imagens/editar-16.png"))); // NOI18N
         bDadosEditar.setText("Editar informações");
+        bDadosEditar.setToolTipText("Habilita/confirma a alteração dos campos do chamado");
         bDadosEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bDadosEditarActionPerformed(evt);
@@ -499,6 +501,7 @@ public class Chamados extends javax.swing.JInternalFrame {
 
         bDadosSuspender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/github/williamcosta303/imagens/suspender-16.png"))); // NOI18N
         bDadosSuspender.setText("Suspender chamado");
+        bDadosSuspender.setToolTipText("Suspende o chamado, o mantendo fora da lista de atendimento");
         bDadosSuspender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bDadosSuspenderActionPerformed(evt);
@@ -507,6 +510,7 @@ public class Chamados extends javax.swing.JInternalFrame {
 
         bDadosEncerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/github/williamcosta303/imagens/encerrar-16.png"))); // NOI18N
         bDadosEncerrar.setText("Encerrar chamado");
+        bDadosEncerrar.setToolTipText("Encerra o chamado, quando este já foi resolvido");
         bDadosEncerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bDadosEncerrarActionPerformed(evt);
@@ -515,7 +519,7 @@ public class Chamados extends javax.swing.JInternalFrame {
 
         bDadosFazerRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/github/williamcosta303/imagens/novoCh-16.png"))); // NOI18N
         bDadosFazerRegistro.setText("Fazer registro");
-        bDadosFazerRegistro.setToolTipText("Move o chamado para sua equipe e ele fica sobre sua responsábilidade");
+        bDadosFazerRegistro.setToolTipText("Realiza um registro rápido, sem a possibilidade de alterar algumas informações");
         bDadosFazerRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bDadosFazerRegistroActionPerformed(evt);
@@ -558,6 +562,7 @@ public class Chamados extends javax.swing.JInternalFrame {
 
         bDadosTrocarEquipe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/github/williamcosta303/imagens/alterarResp-16.png"))); // NOI18N
         bDadosTrocarEquipe.setText("Trocar");
+        bDadosTrocarEquipe.setToolTipText("Habilita/confirma troca de equipe do chamado");
         bDadosTrocarEquipe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bDadosTrocarEquipeActionPerformed(evt);
@@ -566,6 +571,7 @@ public class Chamados extends javax.swing.JInternalFrame {
 
         bDadosTrocarResponsavel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/github/williamcosta303/imagens/alterarResp-16.png"))); // NOI18N
         bDadosTrocarResponsavel.setText("Trocar");
+        bDadosTrocarResponsavel.setToolTipText("Habilita/confirma a troca de responsável do chamado em uma equipe");
         bDadosTrocarResponsavel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bDadosTrocarResponsavelActionPerformed(evt);
@@ -1155,7 +1161,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                     // Confirmação para o usuário
                     JOptionPane.showMessageDialog(this, "Chamado capturado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                 }catch(SQLException SE){
-                    JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "Chamados encerrados não podem ser capturados!\nÉ necessário reabrir o chamado primeiro!", "ERRO", JOptionPane.ERROR_MESSAGE);
@@ -1212,7 +1218,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(this, "É necessário abrir um chamado primeiro!", "ERRO", JOptionPane.WARNING_MESSAGE);
             }
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_bDadosEditarActionPerformed
 
@@ -1261,7 +1267,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(this, "É necessário abrir um chamado primeiro!", "ERRO", JOptionPane.WARNING_MESSAGE);
             }
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_bDadosSuspenderActionPerformed
 
@@ -1317,7 +1323,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(this, "É necessário abrir um chamado primeiro!", "ERRO", JOptionPane.WARNING_MESSAGE);
             }
         } catch (SQLException SE) {
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_bDadosEncerrarActionPerformed
 
@@ -1366,7 +1372,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                 this.selecionarResponsavel(Integer.parseInt(this.cDadosChamado.getText()));
             }
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_bDadosTrocarEquipeActionPerformed
 
@@ -1411,7 +1417,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                 }
             }
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_bDadosTrocarResponsavelActionPerformed
 
@@ -1455,7 +1461,7 @@ public class Chamados extends javax.swing.JInternalFrame {
         }catch(NumberFormatException NFE){
             JOptionPane.showMessageDialog(this, "Digite apenas números no campo!", "ERRO", JOptionPane.WARNING_MESSAGE);
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_bBuscarNumeroActionPerformed
 
@@ -1474,7 +1480,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(this, "Registro inválido!\nVerifique a quantidade de caracteres (Limite de 240)", "ERRO", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException SE) {
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_bNovoRegistroCriarActionPerformed
 
@@ -1651,7 +1657,7 @@ public class Chamados extends javax.swing.JInternalFrame {
             
             
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -1690,7 +1696,7 @@ public class Chamados extends javax.swing.JInternalFrame {
             
             
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -1736,7 +1742,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                 this.tChamados.getColumnModel().getColumn(i).setResizable(false); // Não permitir redimensionamento da coluna X
             }
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -1770,7 +1776,7 @@ public class Chamados extends javax.swing.JInternalFrame {
             this.tRegistros.getColumnModel().getColumn(3).setPreferredWidth(520); // Alterar tamanho da quarta coluna.
             
         } catch (SQLException SE) {
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -1787,7 +1793,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                 this.cDadosEquipe.addItem(listaEquipes.get(i).getNome());
             }
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -1810,7 +1816,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                 this.cDadosResponsavel.addItem("---");
             }
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -1836,7 +1842,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                 }
                 
             }catch(SQLException SE){
-                JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
             }
         }
     }
@@ -1847,7 +1853,7 @@ public class Chamados extends javax.swing.JInternalFrame {
             CB.criarNovoRegistro(this.username, this.recebeDataDoDia(true), this.recebeHorario(true), registro, codigoChamado);
             this.atualizarTabelaRegistros(codigoChamado);
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -1916,7 +1922,7 @@ public class Chamados extends javax.swing.JInternalFrame {
             this.selecionarResponsavel(C.getCodigo());
             this.atualizarTabelaRegistros(C.getCodigo());
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -1950,7 +1956,7 @@ public class Chamados extends javax.swing.JInternalFrame {
                 this.fazerRegistroRapido();
             }
         }catch(SQLException SE){
-            JOptionPane.showMessageDialog(this, "Erro com banco de dados!\nCausa: " + SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, SE.getMessage(), "ERRO!", JOptionPane.ERROR_MESSAGE);
         }
     }
     
