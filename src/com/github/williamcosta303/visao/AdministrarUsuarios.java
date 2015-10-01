@@ -7,6 +7,7 @@ import com.github.williamcosta303.controle.ControleBanco;
 import com.github.williamcosta303.modelo.Login;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import com.github.williamcosta303.utilitarios.Criptografar;
 
 public class AdministrarUsuarios extends javax.swing.JInternalFrame {
 
@@ -408,7 +409,7 @@ public class AdministrarUsuarios extends javax.swing.JInternalFrame {
                         ControleBanco CB = new ControleBanco();
                         Login L = new Login();
                         L.setNome(this.cCadastroNomeUsuario.getText());
-                        L.setSenha(this.cCadastroSenhaPadrao.getText());
+                        L.setSenha(new Criptografar().criptografarSenha(this.cCadastroSenhaPadrao.getText()));
                         L.setCodigoEquipe(1);
                         L.setPrivilegio(0);
                         
@@ -493,6 +494,8 @@ public class AdministrarUsuarios extends javax.swing.JInternalFrame {
             
         } catch (SQLException SE) {
             JOptionPane.showMessageDialog(this, "Erro com Banco de Dados!\nCausa: " + SE.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        } catch (Error E){
+            JOptionPane.showMessageDialog(this, E.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         } catch (Exception E){
             JOptionPane.showMessageDialog(this, "Usuário não encontrado!\nTente digitar novamnete!", "Usuário não encontrado", JOptionPane.ERROR_MESSAGE);
         }
@@ -514,7 +517,7 @@ public class AdministrarUsuarios extends javax.swing.JInternalFrame {
             } else {
                 usuarioAAlterar.setPrivilegio(0);
             }
-            usuarioAAlterar.setSenha(this.cAlteracaoSenha.getText());
+            usuarioAAlterar.setSenha(new Criptografar().criptografarSenha(this.cAlteracaoSenha.getText()));
             
             // Instancia um objeto para realizar contato com banco
             ControleBanco CB = new ControleBanco();

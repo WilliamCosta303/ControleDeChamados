@@ -25,7 +25,7 @@ INSERT INTO equipe(nome) VALUES ('Service Desk'); -- EQUIPE QUE RECEBERÁ OS CHA
 CREATE TABLE usuarios(
     codigo int not null AUTO_INCREMENT,
     username varchar(30) not null,
-    senha varchar(30) not null,
+    senha varchar(256) not null,
     privilegio int not null,
     codigoEquipe int not null,
     primary key(codigo),

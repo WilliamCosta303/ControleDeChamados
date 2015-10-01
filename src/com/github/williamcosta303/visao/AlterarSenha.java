@@ -9,6 +9,7 @@ package com.github.williamcosta303.visao;
 import javax.swing.JOptionPane;
 import com.github.williamcosta303.controle.ControleBanco;
 import com.github.williamcosta303.modelo.Login;
+import com.github.williamcosta303.utilitarios.Criptografar;
 import java.sql.SQLException;
 
 /**
@@ -147,7 +148,7 @@ public class AlterarSenha extends javax.swing.JInternalFrame {
             if(isSenhaOriginalCorreta() && isNovaSenhaValida() && isSenhasDigitadasIguais()){
                 Login L = new Login();
                 L.setCodigo(this.codigoUsuario);
-                L.setSenha(this.getNovaSenha());
+                L.setSenha(new Criptografar().criptografarSenha(this.getNovaSenha()));
                 
                 CB.atualizarCadastro(L, true);
                 
@@ -204,6 +205,7 @@ public class AlterarSenha extends javax.swing.JInternalFrame {
         for(int i = 0; i < this.cSenhaAtual.getPassword().length; i++){
             tmpSenha+= this.cSenhaAtual.getPassword()[i];
         }
+        tmpSenha = new Criptografar().criptografarSenha(tmpSenha);
         
         return CB.verificarLogin(this.nomeUsuario, tmpSenha);
     }

@@ -2,6 +2,7 @@ package com.github.williamcosta303.modelo;
 
 import java.sql.*;
 import java.util.ArrayList;
+import com.github.williamcosta303.utilitarios.Criptografar;
 
 public class ContatoBanco {
     

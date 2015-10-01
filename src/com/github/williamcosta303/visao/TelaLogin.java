@@ -2,6 +2,7 @@ package com.github.williamcosta303.visao;
 
 import java.sql.SQLException;
 import com.github.williamcosta303.controle.ControleBanco;
+import com.github.williamcosta303.utilitarios.Criptografar;
 import java.awt.*;
 import javax.swing.JOptionPane;
 
@@ -135,6 +136,7 @@ public class TelaLogin extends javax.swing.JFrame {
             tmpSenha+=this.cSenha.getPassword()[i];
         }
         
+        tmpSenha = new Criptografar().criptografarSenha(tmpSenha);
         
         if(!this.cUsuario.getText().equals("") && !tmpSenha.equals("")){
             // Se os campos estiverem preenchidos
